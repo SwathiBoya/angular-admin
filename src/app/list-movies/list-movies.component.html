@@ -1,0 +1,23 @@
+<input type="text" placeholder="Movie Name" [(ngModel)]="movie.name"><br><br>
+<input type="text" placeholder="Year" [(ngModel)]="movie.year"><br><br>
+<input type="text" placeholder="Image Url" [(ngModel)]="movie.image_url"><br><br>
+<input type="text" placeholder="Production House" [(ngModel)]="movie.production_house"><br><br>
+<input type="text" placeholder="Rating" [(ngModel)]="movie.rating"><br><br>
+<input type="text" placeholder="Type" [(ngModel)]="movie.type"><br><br>
+<input type="text" placeholder="Date" [(ngModel)]="movie.date"><br><br>
+<input type="button" value="Add Student" (click)= "addMovie()" style="margin: 10px;background-color: wheat;
+padding: 7px;">
+
+
+<div class="ui middle aligned divided list">
+  <div class="item" *ngFor='let m of list'>
+    <div class="right floated content">
+      <button class="ui red button" (click)="onDelete(m)">Delete</button>
+      <button class="ui blue button" (click)="editStudent(s)">Edit</button>
+    </div>
+    <div class="content">
+      <img src="{{ m.image_url }}" style="width:10%"/>
+      {{ m.id }} | {{ m.name }} | {{ m.year }}  | {{ m.production_house }} | {{ m.rating}} | {{ m.type }} | {{ m.language }} | {{ m.date }}
+    </div>
+  </div>
+</div>
